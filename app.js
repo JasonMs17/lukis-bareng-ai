@@ -168,6 +168,9 @@ function clearCanvas() {
   
   window.stencilConverter.clearAll();
   window.autoDraw.strokeData = [];
+  
+  // Update button states after clearing
+  window.drawingApp.updateButtons();
 }
 
 function undoLastStroke() {
@@ -182,6 +185,10 @@ function undoLastStroke() {
     return;
   }
   
+  // Perform the undo operation
+  window.canvasDrawing.undoLastStroke();
+  
+  // Update button states
   window.drawingApp.updateButtons();
 }
 
